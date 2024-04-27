@@ -20,7 +20,6 @@ function App() {
             <Route exact path="/ThisWeeksWeather" render={()=><ThisWeeksWeather />}/>
             <Route exact path="/Calendar" render={()=><Calendar />}/>
             <Route path="/signin" render={()=><Authentication />}/>
-            <Route path="/signup" render=[()=><Authentication />}/>
           </div>
         </HashRouter>
       </Provider>
