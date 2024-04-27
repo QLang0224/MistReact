@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import MovieHeader from './components/movieheader';
-import MovieList from './components/movielist';
-import Movie from './components/movie';
+import MovieHeader from './components/MistHeader';
+import TodaysWeather from './components/TodaysWeather';
+import Movie from './components/ThisWeeksWeather';
 import Authentication from './components/authentication';
 import {HashRouter, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -14,11 +14,13 @@ function App() {
       <Provider store={store}>
         <HashRouter>
           <div>
-            <MovieHeader />
-            <Route exact path="/" render={()=><MovieList />}/>
-            <Route exact path="/movielist" render={()=><MovieList />}/>
-            <Route exact path="/movie/:movieId" render={()=><Movie />}/>
+            <MistHeader />
+            <Route exact path="/" render={()=><TodaysWeather />}/>
+            <Route exact path="/TodaysWeather" render={()=><TodaysWeather />}/>
+            <Route exact path="/ThisWeeksWeather" render={()=><ThisWeeksWeather />}/>
+            <Route exact path="/Calendar" render={()=><Calendar />}/>
             <Route path="/signin" render={()=><Authentication />}/>
+            <Route path="/signup" render=[()=><Authentication />}/>
           </div>
         </HashRouter>
       </Provider>
