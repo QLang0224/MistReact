@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import MovieHeader from './components/movieheader';
-import TodaysWeather from './components/movielist';
+import movielist from './components/movielist';
 import Movie from './components/movie';
 import Authentication from './components/authentication';
 import {HashRouter, Route} from 'react-router-dom';
