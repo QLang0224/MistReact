@@ -22,27 +22,6 @@ export function setForecast(forecast) {
     }
 }
 
-export function fetchMovie(movieId) {
-    return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
-            },
-            mode: 'cors'
-        }).then((response) => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response.json()
-        }).then((res) => {
-            dispatch(movieFetched(res));
-        }).catch((e) => console.log(e));
-    }
-}
-
 export function fetchForecast() {
     return dispatch => {
         return fetch(`${env.REACT_APP_API_URL}/forecast`, {
