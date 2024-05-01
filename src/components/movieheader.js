@@ -4,7 +4,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from 'react-redux';
 import {logoutUser} from "../actions/authActions";
 
-class MovieHeader extends Component {
+class MistHeader extends Component {
     logout() {
         this.props.dispatch(logoutUser());
     }
@@ -22,7 +22,7 @@ class MovieHeader extends Component {
                             <LinkContainer to="/movielist">
                                 <Nav.Link disabled={!this.props.loggedIn}>Forecast</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to={'/movie/' + (this.props.selectedMovie ? this.props.selectedMovie._id : '')}>
+                            <LinkContainer to={'/forecast/' + (this.props.selectedForecast ? this.props.selectedForecast : '')}>
                                 <Nav.Link disabled={!this.props.loggedIn}>Calendar</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to="/signin">
@@ -40,8 +40,8 @@ const mapStateToProps = state => {
     return {
         loggedIn : state.auth.loggedIn,
         username : state.auth.username,
-        selectedMovie: state.movie.selectedMovie
+        selectedForecast: state.forecast.selectedForecast
     }
 }
 
-export default connect(mapStateToProps)(MovieHeader);
+export default connect(mapStateToProps)(MistHeader);
