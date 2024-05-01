@@ -40,7 +40,7 @@ const mapStateToProps = state => {
     return {
         loggedIn : state.auth.loggedIn,
         username : state.auth.username,
-        selectedForecast: state.forecast.selectedForecast
+        //selectedForecast: state.forecast.selectedForecast
     }
 }
 
