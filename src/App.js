@@ -15,8 +15,8 @@ function App() {
         <HashRouter>
           <div>
             <MovieHeader />
-            <Route exact path="/" render={()=><Movielist />}/>
-            <Route exact path="/movielist" render={()=><Movielist />}/>
+            <Route exact path="/" render={()=><MovieList />}/>
+            <Route exact path="/movielist" render={()=><MovieList />}/>
             <Route exact path="/movie/movieId" render={()=><Movie />}/>
             <Route path="/signin" render={()=><Authentication />}/>
           </div>
