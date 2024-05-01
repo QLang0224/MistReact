@@ -9,7 +9,7 @@ function Forecast(props) {
     const [selectedForecast] = useState(props.selectedForecast);
     const params = useParams();
     const dispatch = useDispatch();
-    if (selectedMovie == null) {
+    if (selectedForecast == null) {
         dispatch(fetchForecast(Forecast));
     }
 
