@@ -14,7 +14,7 @@ function App() {
       <Provider store={store}>
         <HashRouter>
           <div>
-            <MovieHeader />
+            <MistHeader />
             <Route exact path="/" render={()=><Forecast />}/>
             <Route exact path="/forecast" render={()=><ForecastList />}/>
             <Route path="/signin" render={()=><Authentication />}/>
