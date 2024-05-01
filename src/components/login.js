@@ -36,8 +36,8 @@ class Login extends Component {
         return (
             <Form className='form-horizontal'>
                 <Form.Group controlId="username">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control onChange={this.updateDetails} value={this.state.details.username} type="email" placeholder="Enter email" />
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control onChange={this.updateDetails} value={this.state.details.username} type="username" placeholder="Enter username" />
                 </Form.Group>
 
                 <Form.Group controlId="password">
