@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { fetchMovie } from "../actions/movieActions";
+import { fetchForecast } from "../actions/movieActions";
 
 // support routing
 
@@ -16,4 +16,4 @@ function Forecast(props) {
     return (<Forecast />)
 }
 
-export default Movie;
+export default Forecast;
