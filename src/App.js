@@ -15,10 +15,9 @@ function App() {
         <HashRouter>
           <div>
             <MistHeader />
-            <Route exact path="/" render={()=><TodaysWeather />}/>
-            <Route exact path="/TodaysWeather" render={()=><TodaysWeather />}/>
-            <Route exact path="/ThisWeeksWeather" render={()=><ThisWeeksWeather />}/>
-            <Route exact path="/Calendar" render={()=><Calendar />}/>
+            <Route exact path="/" render={()=><mMvielist />}/>
+            <Route exact path="/movielist" render={()=><Movielist />}/>
+            <Route exact path="/movie/movieId" render={()=><Movie />}/>
             <Route path="/signin" render={()=><Authentication />}/>
           </div>
         </HashRouter>
