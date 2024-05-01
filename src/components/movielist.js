@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { fetchMovies } from "../actions/movieActions";
-import { setMovie } from "../actions/movieActions";
+import { fetchForecast } from "../actions/movieActions";
+import { setForecast } from "../actions/movieActions";
 import {connect} from 'react-redux';
 import {Image, Nav} from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 import { BsStarFill} from 'react-icons/bs'
 import {LinkContainer} from 'react-router-bootstrap';
 
-class MovieList extends Component {
+class ForecastList extends Component {
     constructor(props) {
         super(props);
         this.handleSelect = this.handleSelect.bind(this);
@@ -15,37 +15,36 @@ class MovieList extends Component {
 
     componentDidMount() {
         const {dispatch} = this.props;
-        dispatch(fetchMovies());
+        dispatch(fetchForecast());
     }
 
     handleSelect(selectedIndex, e) {
         const {dispatch} = this.props;
-        dispatch(setMovie(this.props.movies[selectedIndex]));
+        dispatch(setForecast(this.props.forecast[selectedIndex]));
     }
 
-    handleClick = (movie) => {
+    handleClick = (forecast) => {
         const {dispatch} = this.props;
-        dispatch(setMovie(movie));
+        dispatch(setForecast(forecast));
     }
 
     render() {
-        const MovieListCarousel = ({movieList}) => {
-            if (!movieList) {
+        const ForecastListCarousel = ({ForecastList}) => {
+            if (!ForecastList) {
                 return <div>Loading....</div>
             }
 
             return (
                 <Carousel onSelect={this.handleSelect}>
-                    {movieList.map((movie) =>
-                        <Carousel.Item key={movie._id}>
+                    {ForecastList.map((forecast) =>
+                        <Carousel.Item key={forecast._id}>
                             <div>
-                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
-                                    <Nav.Link><Image className="image" src={movie.imageUrl} thumbnail /></Nav.Link>
+                                <LinkContainer to={'/forecast/'+forecast._id} onClick={()=>this.handleClick(forecast)}>
+                                    <Nav.Link><Image className="image" src={forecast.imageUrl} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
                             <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <BsStarFill glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}
+                                <h3>{forecast.title}</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                     )}
@@ -55,16 +54,16 @@ class MovieList extends Component {
         }
 
         return (
-            <MovieListCarousel movieList={this.props.movies} />
+            <ForecastListCarousel movieList={this.props.forecast} />
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        movies: state.movie.movies
+        forecast: state.forecast
     }
 }
 
-export default connect(mapStateToProps)(MovieList);
+export default connect(mapStateToProps)(ForecastList);
 
