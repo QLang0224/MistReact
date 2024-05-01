@@ -1,7 +1,7 @@
 import constants from '../constants/actionTypes'
 
 let initialState = {
-      movies: [],
+      forecast: [],
       selectedForecast: null
 }
 
