@@ -2,7 +2,7 @@ import actionTypes from '../constants/actionTypes';
 //import runtimeEnv from '@mars/heroku-js-runtime-env'
 const env = process.env;
 
-function forecastFetched(movie) {
+function forecastFetched(forecast) {
     return {
         type: actionTypes.FETCH_FORECAST,
         selectedForecast: forecast
