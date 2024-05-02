@@ -39,7 +39,7 @@ class ForecastList extends Component {
                     {ForecastList.map((forecast) =>
                         <Carousel.Item key={forecast.id}>
                             <div>
-                                <LinkContainer to={'/forecast/'+forecast.id} onClick={()=>this.handleClick(forecast)}>
+                                <LinkContainer to={'/forecast/'+forecast.number} onClick={()=>this.handleClick(forecast)}>
                                     <Nav.Link><Image className="image" src={weatherImage} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
