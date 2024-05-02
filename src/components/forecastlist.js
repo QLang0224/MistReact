@@ -31,7 +31,7 @@ class ForecastList extends Component {
     render() {
         const ForecastListCarousel = ({forecastList}) => {
             if (!forecastList) {
-                return <div>Loading....</div>
+                return <div>Loading...</div>
             }
 
             return (
