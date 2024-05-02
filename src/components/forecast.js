@@ -8,7 +8,6 @@ import { fetchForecast } from "../actions/forecastActions";
 function Forecast(props) {
     const [selectedForecast] = useState(props.selectedForecast);
     const params = useParams();
-    const forecastId = params.forecast.number;
     const dispatch = useDispatch();
     if (selectedForecast == null) {
         dispatch(fetchForecast(Forecast));
