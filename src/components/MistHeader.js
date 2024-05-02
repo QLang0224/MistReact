@@ -22,7 +22,7 @@ class MistHeader extends Component {
                             <LinkContainer to="/forecastlist">
                                 <Nav.Link disabled={!this.props.loggedIn}>Forecast</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to={'/forecast/' + (this.props.selectedForecast ? this.props.selectedForecast : '')}>
+                            <LinkContainer to={'/forecast/' + (this.props.selectedForecast ? this.props.selectedForecast._id : '')}>
                                 <Nav.Link disabled={!this.props.loggedIn}>Calendar</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to="/signin">
