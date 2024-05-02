@@ -40,7 +40,7 @@ class ForecastList extends Component {
                         <Carousel.Item key={forecast.number}>
                             <div>
                                 <LinkContainer to={'/forecast/'+forecast.number} onClick={()=>this.handleClick(forecast)}>
-                                    <Nav.Link><Image className="image" src={forecast.imageUrl} thumbnail /></Nav.Link>
+                                    <Nav.Link><Image className="image" src={forecast.weatherImage} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
                             <Carousel.Caption>
